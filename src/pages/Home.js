@@ -19,7 +19,9 @@ const Home = () => {
     dispatch(loadGames());
   }, [dispatch]);
   //Get the data back from storage state?
-  const { popular, newGames, upcoming } = useSelector((state) => state.games);
+  const { popular, newGames, upcoming, searched } = useSelector(
+    (state) => state.games
+  );
 
   //FETCH Games
   return (
@@ -28,6 +30,18 @@ const Home = () => {
         <AnimatePresence> */}
       {pathId && <GameDetail pathId={pathId} />}
       {/* </AnimatePresence> */}
+      {searched.length ? (
+        <div className="searched">
+          <h2>Searched Games</h2>
+          <Games>
+            {searched.map((game) => {
+              return <Game game={game} key={game.id} />;
+            })}
+          </Games>
+        </div>
+      ) : (
+        ""
+      )}
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => {
