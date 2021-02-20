@@ -11,6 +11,9 @@ import { fetchSearch } from "../actions/gamesAction";
 import { clearSearched } from "../actions/gamesAction";
 import { useDispatch } from "react-redux";
 
+//Animation
+import { fadeIn } from "../animation";
+
 const Nav = () => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
@@ -29,7 +32,7 @@ const Nav = () => {
     dispatch(clearSearched());
   };
   return (
-    <StyledNav>
+    <StyledNav variants={fadeIn} initial="hidden" animate="show">
       <Logo onClick={clearSearch}>
         <img src={logo} alt="logo" />
         <h1>Ember</h1>

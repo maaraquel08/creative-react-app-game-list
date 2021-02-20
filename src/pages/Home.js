@@ -3,9 +3,12 @@ import GameDetail from "../components/GameDetail";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gamesAction";
+
+//Animation
 import styled from "styled-components";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { fadeIn } from "../animation";
 
 //Components
 import Game from "../components/Game";
@@ -25,7 +28,7 @@ const Home = () => {
 
   //FETCH Games
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       {/* <AnimateSharedLayout type="crossfade">
         <AnimatePresence> */}
       {pathId && <GameDetail pathId={pathId} />}
