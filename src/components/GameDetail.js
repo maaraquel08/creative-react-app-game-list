@@ -116,11 +116,11 @@ const GameDetail = ({ pathId }) => {
               </Info>
             </Stats>
             <Media>
-              {/* <motion.img
+              <motion.img
                 layoutId={`image ${pathId}`}
                 alt={game.name}
                 src={smallImage(game.background_image, 640)}
-              /> */}
+              />
               <SubMedia />
             </Media>
             <Description>

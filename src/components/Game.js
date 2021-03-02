@@ -93,6 +93,21 @@ const StyledGame = styled(motion.div)`
     object-fit: cover;
   }
   overflow: hidden;
+
+  @media screen and (max-width: 640px) {
+    min-height: 20vh;
+    width: 50%;
+    height: 30vh;
+    img {
+      object-fit: cover;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export default Game;
